@@ -1,0 +1,19 @@
+print('hello, world')
+
+print('100+200=',100+200)
+
+print('Please enter your name: ')
+
+name1=input('First Name: ')
+name2=input('Last Name: ')
+
+print('Welcome Back ', name1,name2)
+
+#print absolute value of an integer:
+a=-100
+
+if a>=0:  
+	print (a) 
+else: 
+	print(-a)
+	  
