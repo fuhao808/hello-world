@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+age=20
+if age>= 18:
+	print('your age is', age) 
+	print('adult')
+elif age>=6:
+	print('your age is', age)
+	print('teenager')
+else:
+    print('kid')
+birth=input('birthyear')
+birth=int(birth)
+if birth<2000:
+   print('before 00')
+else:
+   print('00s')
+   
+height = 1.75
+weight = 80.5
+bmi=weight/(pow(height,2))
+if bmi<18.8:
+   print('too light')
+elif bmi <=25:
+   print('normal')
