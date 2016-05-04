@@ -48,4 +48,25 @@ L = ['Bart', 'Lisa', 'Adam']
 for i in L:
     print('hello',i,'!')
 	
+######dict and set;	
+d={'Michael':95, 'Bob':75, 'Tracy': 85}
+d['Michael']
+d['Adam']=67
+d.pop('Bob')
+
+s=set([1,2,2,3,3,3])
+s
+s.add(4)
+s
+
+s1=set([1,2,3])
+s2=set([2,3,4])
+s1&s2
+s1|s2
+
+a=['c','b','a']
+a.sort()
+
+a='abc'
+a.replace('a','A')
 	
