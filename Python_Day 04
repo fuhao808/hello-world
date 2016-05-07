@@ -1,0 +1,151 @@
+# -*- coding: utf-8 -*-
+abs(-20)
+max(1,2)
+float('12.21')
+str(1.23)
+bool(1)
+bool('')
+a=abs
+a(-1)
+
+n1=255
+n2=1000
+print(hex(n1),hex(n2))
+
+def my_abs():
+	if not isinstance(x, (int, float)):
+		raise TypeError('bad operand type')
+	if x>=0:
+		return x
+	else:
+		return -x
+def nop():
+	pass
+age=0
+if age>=18:
+	pass       #####让程序先运作起来
+
+import math
+def move(x,y,step,angle=0):
+	nx=x+step*math.cos(angle)
+	ny=y+step*math.sin(angle)
+	return nx, ny
+x,y=move(0,0,2,math.pi/6)
+print(x,y)
+###########返回值其实是一个tuple
+
+import math
+def quadratic(a,b,c):
+	x1=(-b+math.sqrt(b*b-4*a*c))/(2*a)
+	x2=(-b-math.sqrt(b*b-4*a*c))/(2*a)
+	return x1, x2
+x=quadratic(1,5,6)
+print(x)
+print(quadratic(2,3,1))
+print(quadratic(1,3,-4))
+
+def power(x,n=2):     ####set n=2 as default when power(x)
+	s=1
+	while n>0:
+		n=n-1
+		s=s*x
+	return s
+print(power(5))
+print(power(5,3))
+
+def enroll(name, gender, age=6, city='Beijing'):
+	print('name',name)
+	print('gender',gender)
+	print('age',age)
+	print('city',city)
+
+print(enroll('sarah','F'))
+
+def add_end(L=None):  #######否则会一直添加下去
+	L.append('end')
+	return L
+
+def calc(numbers):
+	sum=0
+	for n in numbers:
+		sum=sum+n*n
+	return sum
+print(calc([1,2,3]))
+print(calc(range(100)))
+
+def calcx(*numbers):
+	sum=0
+	for n in numbers:
+		sum=sum+n*n
+	return sum
+
+print(calcx(1,2,3))
+
+nu = (1,2,3,4)
+print(calcx(*nu))
+
+def person(name,age,**kw):
+	print('name',name,'age',age,'other', kw)
+
+extra={'city':'Beijing', 'job':'Analyst'}
+print(person('adam', 25, **extra))
+
+###variables after * must be included and input
+def person(name, age, *, city, job):  
+    print(name, age, city, job)
+person('Jack', 24, city='Beijing', job='Engineer')
+
+def person(name, age, *args, city, job):
+    print(name, age, args, city, job)
+def person(name, age, *, city='Beijing', job):
+    print(name, age, city, job)
+	
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)	
+
+f1(1,2)	
+f1(1,2,3)
+f1(1,2,3,'a','b')
+f1(1,2,3,'a','b',x=9,y=99)
+f2(1,2,d=99,ext=None)
+
+args=(1,2,3,4)
+kw={'d':99,'x':'#'}
+f1(*args,**kw)
+args = (1, 2, 3)
+kw = {'d': 88, 'x': '#'}
+f2(*args, **kw)
+
+######对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的。
+######递归函数
+def fact(n):
+	if n==1:
+		return 1
+	return n*fact(n-1)
+	
+def fb(n):
+    if n==1:
+        return 1
+    if n==2:
+        return 1
+    return fb(n-1)+fb(n-2)
+
+def fact(n):
+    return fact_iter(n, 1)
+
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)	
+
+def move(n,a,b,c):
+    if n==1:
+        print(a,'--->',c)
+    else:
+        move(n-1,a,c,b)
+        move(1,a,b,c)
+        move(n-1,b,a,c)
+move(3,'a','b','c')
